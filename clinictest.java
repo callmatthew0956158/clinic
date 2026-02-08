@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+// Carll Matthew Colocado , Angelo Azana
 public class clinictest {
 
     public static void main(String[] args) {
