@@ -4,44 +4,44 @@ public class clinictest {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         // PATIENT INFORMATION INPUT
         System.out.println("===== ENTER PATIENT INFORMATION =====");
 
         // Basic patient details
         System.out.print("Patient Name: ");
-        String name = sc.nextLine();
+        String name = input.nextLine();
 
         System.out.print("Birthdate (MM/DD/YYYY): ");
-        String birthdate = sc.nextLine();
+        String birthdate = input.nextLine();
 
         System.out.print("Sample ID: ");
-        int sampleId = sc.nextInt();
-        sc.nextLine(); // clear buffer
+        int sampleId = input.nextInt();
+        input.nextLine(); // clear buffer
 
         System.out.print("Address: ");
-        String address = sc.nextLine();
+        String address = input.nextLine();
 
         System.out.print("Age: ");
-        int age = sc.nextInt();
-        sc.nextLine(); // clear buffer
+        int age = input.nextInt();
+        input.nextLine(); // clear buffer
 
         System.out.print("Sex (M/F): ");
-        String sex = sc.nextLine().toUpperCase(); // convert to uppercase for easy comparison
+        String sex = input.nextLine().toUpperCase(); // convert to uppercase for easy comparison
 
         System.out.print("Date of Collection: ");
-        String date = sc.nextLine();
+        String date = input.nextLine();
 
         System.out.print("Time of Collection: ");
-        String time = sc.nextLine();
+        String time = input.nextLine();
 
         System.out.print("Hours Since Last Meal: ");
-        int lastMeal = sc.nextInt();
-        sc.nextLine(); // clear buffer
+        int lastMeal = input.nextInt();
+        input.nextLine(); // clear buffer
 
         System.out.print("Requesting Physician: ");
-        String physician = sc.nextLine();
+        String physician = input.nextLine();
 
         // Create Information object (OOP principle)
         Information patient = new Information(
@@ -74,14 +74,14 @@ public class clinictest {
         // Loop to ask user which test to perform
         for (int i = 0; i < tests.length; i++) {
             System.out.print(tests[i] + " (Y/N)? ");
-            String choice = sc.nextLine().trim().toUpperCase();
+            String choice = input.nextLine().trim().toUpperCase();
 
             // If user selects YES
             if (choice.equals("Y")) {
                 selected[i] = true;
                 System.out.print("Enter result for " + tests[i] + ": ");
-                results[i] = sc.nextDouble();
-                sc.nextLine(); // clear buffer
+                results[i] = input.nextDouble();
+                input.nextLine(); // clear buffer
             }
         }
 
@@ -201,6 +201,6 @@ public class clinictest {
         System.out.println("\n===== FINAL DIAGNOSIS =====");
         System.out.println(finalDiagnosis);
 
-        sc.close(); // close scanner
+        input.close(); // close scanner
     }
 }
